@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Directory from '../../components/directory/Directory.component';
 
-const Homepage = ({ MenuItem, Content, Title, Subtitle }) => (
+const Homepage = () => (
     <HomePage>
         <Directory/>
     </HomePage>
