@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MenuItem = ({ title, imageUrl, size }) => (
-    <Menu size={size} style={{ backgroundImage: `url(${imageUrl})` }}>
+    <Menu className={`${size}`}>
+    <div className='background-image' style={{ backgroundImage: `url(${imageUrl})` }}></div>
         <Content>
-            <Title>{title}</Title>
+            <Title>{title.toUpperCase()}</Title>
             <Subtitle>Shop Now</Subtitle>
         </Content>
     </Menu>
@@ -17,11 +18,24 @@ flex: 1 1 auto;
 display: flex;
 align-items: center;
 justify-content: center;
-background-position: center;
-background-size: cover;
 border: 1px solid black;
 margin: 0 7.5px 15px;
-    &.large {
+overflow: hidden;
+
+    &:hover{
+        cursor: pointer;
+
+        & .background-image {
+            transform: scale(1.1);
+            transition: transform 4s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
+
+        &.content {
+            opacity: 0.9;
+        }
+    }
+
+    & .large {
     height: 380px;
 }
   
@@ -31,7 +45,16 @@ margin: 0 7.5px 15px;
     &:last-child {
     margin-left: 7.5px;
 }
-`
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+`;
+
 const Content = styled.div`
        height: 90px;
 padding: 0 25px;
@@ -40,16 +63,21 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 border: 1px solid black;
-`
-const Title = styled.div`
+background-color: white;
+opacity: 0.7;
+position: absolute;
+`;
+
+const Title = styled.h1`
        font-weight: bold;
 margin-bottom: 6px;
 font-size: 22px;
 color: #4a4a4a;
-`
+`;
+
 const Subtitle = styled.span`
  font-weight: lighter;
 font-size: 16px;
-`
+`;
 
 export default MenuItem;

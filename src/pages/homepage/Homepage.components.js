@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import DirectoryMenu from '../../components/directory/Directory.component';
+import Directory from '../../components/directory/Directory.component';
 
 const Homepage = ({ MenuItem, Content, Title, Subtitle }) => (
     <HomePage>
-        <DirectoryMenu>
-        </DirectoryMenu>
+        <Directory/>
     </HomePage>
 );
 

@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from '../menu-item/MenuItem.component'
 import styled from 'styled-components';
 
-class DirectoryMenu extends React.Component {
+class Directory extends React.Component {
     constructor() {
         super();
 
@@ -44,24 +44,22 @@ class DirectoryMenu extends React.Component {
 
     render() {
         return (
-            <Directory>
+            <StyledDirectory>
                 {
                     this.state.sections.map(({ title, imageUrl, id, size }) => (
-                        <MenuItem key={id} title={title} imageURL={imageUrl} size={size}>
-
-                        </MenuItem>
+                        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
                     ))
                 }
-            </Directory>
+            </StyledDirectory>
         )
     }
 }
 
-const Directory = styled.div`
+const StyledDirectory = styled.div`
 width: 100%;
 display: flex;
 flex-wrap: wrap;
 justify-content: space - between;
 `
 
-export default DirectoryMenu;
+export default Directory;
