@@ -1,17 +1,8 @@
 import React from 'react';
 import GlobalStyle from './components/GlobalStyle';
 import Homepage from './pages/homepage/Homepage.component';
+import ShopPage from './pages/shop/Shop.component';
 import {Switch, Route} from 'react-router-dom';
-
-
-const HatsPage = () => {
-  return (
-    <div>
-      <h1>HatsPage</h1>
-    </div>
-)
-  };
-
 
 
 function App() {
@@ -20,7 +11,7 @@ function App() {
     <GlobalStyle />
       <Switch>
       <Route exact path='/' component={Homepage} />
-      <Route path='/hats' component={HatsPage} />
+      <Route path='/shop' component={ShopPage} />
       </Switch>
     </div>
   );

@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Open Sans', sans-serif;
+    padding: 20px 60px;
   }
 
 `;
