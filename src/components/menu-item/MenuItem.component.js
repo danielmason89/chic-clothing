@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     <Menu className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
-    <div className='background-image' style={{ backgroundImage: `url(${imageUrl})` }}/>
+    <div class='background-image' style={{ backgroundImage: `url(${imageUrl})` }}/>
         <Content className='content'>
             <Title>{title.toUpperCase()}</Title>
             <Subtitle>Shop Now</Subtitle>

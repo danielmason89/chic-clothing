@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 20px 60px;
   }
 
+  a{
+    color: black;
+    text-decoration: none;
+  }
+
 `;
 
 export default GlobalStyle;

@@ -6,8 +6,8 @@ const ItemsCollection = ({ id, name, price, imageUrl }) => {
         <CollectionItem>
             <Image style={{ backgroundImage: `url(${imageUrl})`}} />
                 <CollectionFooter>
-                    <span className="name">{name}</span>
-                    <span className="price">{price}</span>
+                    <span class="name">{name}</span>
+                    <span class="price">{price}</span>
                 </CollectionFooter>
         </CollectionItem>
     )
