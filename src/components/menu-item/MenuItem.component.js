@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
-    <Menu className={`${size}`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
+    <Menu className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <div className='background-image' style={{ backgroundImage: `url(${imageUrl})` }}/>
         <Content className='content'>
             <Title>{title.toUpperCase()}</Title>
@@ -22,7 +22,6 @@ justify-content: center;
 border: 1px solid black;
 margin: 0 7.5px 15px;
 overflow: hidden;
-
     &:hover{
         cursor: pointer;
         & .background-image {
@@ -31,11 +30,14 @@ overflow: hidden;
         }
 
         & .content {
-            opacity: 0.8;
-        }
-}
+            opacity: 0.7;
 
-    & .large {
+        }
+
+
+    }
+
+    &.large {
     height: 380px;
 }
   
@@ -65,6 +67,7 @@ justify-content: center;
 border: 1px solid black;
 background-color: white;
 position: absolute;
+opacity: 0.9;
 `;
 
 const Title = styled.h1`

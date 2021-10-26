@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalStyle from './components/GlobalStyle';
-import Homepage from './pages/homepage/Homepage.components';
+import Homepage from './pages/homepage/Homepage.component';
 import {Switch, Route} from 'react-router-dom';
 
 
@@ -9,8 +9,8 @@ const HatsPage = () => {
     <div>
       <h1>HatsPage</h1>
     </div>
-  )
-}
+)
+  };
 
 
 
