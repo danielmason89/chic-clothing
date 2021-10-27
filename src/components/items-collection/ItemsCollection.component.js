@@ -1,17 +1,25 @@
 import React from 'react'
 import styled from 'styled-components';
+import CustomButton from '../button-custom/CustomButton.component';
+import { connect } from 'react-redux';
+import { addItem } from '../../redux/cart/cart.actions';
 
-const ItemsCollection = ({ id, name, price, imageUrl }) => {
+const ItemsCollection = ({ item, addItem }) => {
+    const { name, price, imageUrl, } = item;
     return (
         <CollectionItem>
             <Image style={{ backgroundImage: `url(${imageUrl})`}} />
                 <CollectionFooter>
-                    <span class="name">{name}</span>
-                    <span class="price">{price}</span>
+                    <span className="name">{name}</span>
+                    <span className="price">{price}</span>
                 </CollectionFooter>
+                <CustomButton2 onClick={() => addItem(item)} className="custom-button" inverted>Add to cart</CustomButton2>
         </CollectionItem>
-    )
-}
+    )};
+
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+});
 
 const CollectionItem = styled.div`
     width: 22%;
@@ -19,8 +27,18 @@ const CollectionItem = styled.div`
     flex-direction: column;
     height: 350px;
     align-items: center;
+    position: relative;
 
+    &:hover {
+        .image {
+            opacity: 0.8;
+        }
 
+        .custom-button {
+            opacity: 0.85;
+            display: flex;
+        }
+    }
 `;
 const Image = styled.img `
 width: 100%;
@@ -49,4 +67,12 @@ width: 100%;
 
 `;
 
-export default ItemsCollection;
+const CustomButton2 = styled(CustomButton)`
+width: 80%;
+opacity: 0.7;
+position: absolute;
+top: 255px;
+display: none;
+`;
+
+export default connect(null, mapDispatchToProps)(ItemsCollection);
