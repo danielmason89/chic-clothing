@@ -6,6 +6,7 @@ import GlobalStyle from './components/GlobalStyle';
 import Header from './components/header/Header.component'
 import Homepage from './pages/homepage/Homepage.component';
 import ShopPage from './pages/shop/Shop.component';
+import UserSignInUpPage from './pages/userSignInUpPage/userSignInUpPage.component';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Switch>
       <Route exact path='/' component={Homepage} />
       <Route path='/shop' component={ShopPage} />
+      <Route path='/sign-in' component={UserSignInUpPage} />
       </Switch>
     </div>
   );
