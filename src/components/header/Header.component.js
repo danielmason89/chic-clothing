@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -17,12 +18,11 @@ const Header = ({ currentUser }) => {
             <Link className="option" to='/shop'>
                 Contact
             </Link>
-            { 
-                currentUser ?
+            { currentUser ? (
                 <div className='option' onClick={() => auth.signOut()}>Sign Out</div>
-                :
+             ) : (
                 <Link className="option" to='sign-in'>Sign In</Link>
-            }
+             )}
         </div>
         </StyledHeader>
     )
@@ -52,8 +52,11 @@ height: 70px;
         cursor: pointer;
       }
     }
-
 `;
 
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+});
 
-export default Header;
+
+export default connect(mapStateToProps)(Header);
