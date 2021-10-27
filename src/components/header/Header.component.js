@@ -2,10 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import styled from 'styled-components';
+import IconCart from '../cart-icon/IconCart.component';
+import CartDropDown from '../dropdown-cart/CartDropDown.component';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
     return (
         <StyledHeader>
         <Link className="logo-container" to="/">
@@ -21,12 +23,20 @@ const Header = ({ currentUser }) => {
             { currentUser ? (
                 <div className='option' onClick={() => auth.signOut()}>Sign Out</div>
              ) : (
-                <Link className="option" to='sign-in'>Sign In</Link>
+                <Link className="option" to='/sign-in'>Sign In</Link>
              )}
+             <IconCart/>
         </div>
+        {hidden ? null : <CartDropDown/>}
         </StyledHeader>
-    )
-}
+    )};
+
+const mapStateToProps = ({user: { currentUser}, cart: { hidden } }) => ({
+    currentUser,
+    hidden
+});
+
+
 const StyledHeader = styled.div `
 height: 70px;
     width: 100%;
@@ -54,9 +64,7 @@ height: 70px;
     }
 `;
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
-});
+
 
 
 export default connect(mapStateToProps)(Header);

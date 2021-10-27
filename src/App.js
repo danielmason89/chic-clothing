@@ -10,7 +10,6 @@ import Header from './components/header/Header.component'
 import Homepage from './pages/homepage/Homepage.component';
 import ShopPage from './pages/shop/Shop.component';
 import UserSignInUpPage from './pages/userSignInUpPage/userSignInUpPage.component';
-import SignIn from './components/sign-in/SignIn.component';
 
 
 class App extends React.Component {
