@@ -74,7 +74,7 @@ flex-direction: column;
 width: 380px;
 
 .title {
-    margin: 10px 0;
+    margin: 1.6rem 0rem;
 }
 `;
 
