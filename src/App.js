@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
+import { auth } from  './firebase/firebase.utils';
 // Styles
 import GlobalStyle from './components/GlobalStyle';
 // Components
@@ -9,11 +10,34 @@ import ShopPage from './pages/shop/Shop.component';
 import UserSignInUpPage from './pages/userSignInUpPage/userSignInUpPage.component';
 
 
-function App() {
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  unsubscribeFromAuth = null
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+
+    })
+  }
+
+  componentWillUnmount() {
+    this.unSubscribeFromAuth();
+  }
+
+
+  render() {
   return (
     <div>
     <GlobalStyle />
-    <Header/>
+    <Header currentUser={this.state.currentUser} />
       <Switch>
       <Route exact path='/' component={Homepage} />
       <Route path='/shop' component={ShopPage} />
@@ -21,6 +45,7 @@ function App() {
       </Switch>
     </div>
   );
+}
 }
 
 export default App;

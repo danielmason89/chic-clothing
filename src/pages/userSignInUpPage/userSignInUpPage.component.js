@@ -11,11 +11,16 @@ const UserSignInUpPage = () => {
 }
 
 const StyledSignIn = styled.div`
-width: 30vw;
+width: 380px;
 display: flex;
 flex-direction: column;
  .title {
-     margin: 1.6rem 0px;
+     margin: 1.6rem 0rem;
+ }
+ .buttons {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
  }
 `;
 

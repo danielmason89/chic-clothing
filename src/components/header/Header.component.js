@@ -1,9 +1,10 @@
 import React from 'react'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { auth } from '../../firebase/firebase.utils';
 
-const Header = () => {
+const Header = ({ currentUser }) => {
     return (
         <StyledHeader>
         <Link className="logo-container" to="/">
@@ -16,6 +17,12 @@ const Header = () => {
             <Link class="option" to='/shop'>
                 Contact
             </Link>
+            { 
+                currentUser ?
+                <div class='option' onClick={() => auth.signOut()}>Sign Out</div>
+                :
+                <Link className="option" to='sign-in'>Sign In</Link>
+            }
         </div>
         </StyledHeader>
     )
@@ -42,6 +49,7 @@ height: 70px;
   
       .option {
         padding: 10px 15px;
+        cursor: pointer;
       }
     }
 
