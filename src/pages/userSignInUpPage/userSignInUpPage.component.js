@@ -1,27 +1,23 @@
 import React from 'react'
 import styled from 'styled-components';
 import SignIn from '../../components/sign-in/SignIn.component';
+import SignUp from '../../components/sign-up/SignUp.component';
 
 const UserSignInUpPage = () => {
     return (
-        <StyledSignIn>
+        <StyledSignInUp>
             <SignIn />
-        </StyledSignIn>
+            <SignUp />
+        </StyledSignInUp>
     )
 }
 
-const StyledSignIn = styled.div`
-width: 380px;
+const StyledSignInUp = styled.div `
+width: 850px;
 display: flex;
-flex-direction: column;
- .title {
-     margin: 1.6rem 0rem;
- }
- .buttons {
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
- }
+justify-content: space-between;
+margin: 30px auto;
 `;
+
 
 export default UserSignInUpPage;
