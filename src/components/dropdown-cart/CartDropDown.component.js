@@ -1,20 +1,29 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import CustomButton from '../button-custom/CustomButton.component';
+import ItemCart from '../cart-item/ItemCart.component';
 import styled from 'styled-components';
 
-const CartDropDown = () => {
+const CartDropDown = ({ cartItems }) => {
     return (
         <StyledCartDropDown>
-        <div className="cart-items"/>
+        <StyledCartItem>
+        {
+          cartItems.map(cartItem => ( <ItemCart key={cartItem.id} item={cartItem} /> )
+          )}
+        </StyledCartItem>
         <CustomButton>CheckOut Here</CustomButton>
         </StyledCartDropDown>
     )
 }
+const mapStateToProps = ({cart: { cartItems } }) => ({
+  cartItems
+})
 
 const StyledCartDropDown = styled.div`
 
   position: absolute;
-  width: 240px;
+  width: 300px;
   height: 340px;
   display: flex;
   flex-direction: column;
@@ -24,18 +33,14 @@ const StyledCartDropDown = styled.div`
   top: 90px;
   right: 40px;
   z-index: 5;
+`;
 
-  .cart-items {
+const StyledCartItem = styled.div`
     height: 240px;
     display: flex;
     flex-direction: column;
-    /* overflow: scroll; */
-  }
-
-  button {
-    margin-top: auto;
-  }
-
+    overflow: auto;
+    margin-bottom: auto;
 `;
 
-export default CartDropDown;
+export default connect(mapStateToProps)(CartDropDown);
