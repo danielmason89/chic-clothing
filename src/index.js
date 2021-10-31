@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Redux
 import { Provider } from 'react-redux';
-import store from './redux/Store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor }from './redux/Store';
 // Chic App
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -12,7 +13,9 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
     <React.StrictMode>
+    <PersistGate persistor={persistor}>
     <App />
+    </PersistGate>
     </React.StrictMode>
     </BrowserRouter>
   </Provider>,

@@ -11,7 +11,7 @@ const ItemsCollection = ({ item, addItem }) => {
             <Image style={{ backgroundImage: `url(${imageUrl})`}} />
                 <CollectionFooter>
                     <span className="name">{name}</span>
-                    <span className="price">{price}</span>
+                    <span className="price">${price}</span>
                 </CollectionFooter>
                 <CustomButton2 onClick={() => addItem(item)} className="custom-button" inverted>Add to cart</CustomButton2>
         </CollectionItem>
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const CollectionItem = styled.div`
-    width: 22%;
+    width: 22vw;
     display: flex;
     flex-direction: column;
     height: 350px;
