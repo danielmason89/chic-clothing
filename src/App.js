@@ -16,10 +16,10 @@ import { createStructuredSelector } from 'reselect';
 
 
 class App extends React.Component {
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const {setCurrentUser} = this.props;
+    const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
       if (userAuth) {
@@ -32,6 +32,7 @@ class App extends React.Component {
             });
         });
       }
+
       else {
         setCurrentUser(userAuth);
     }
@@ -41,7 +42,6 @@ class App extends React.Component {
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
-
 
   render() {
   return (

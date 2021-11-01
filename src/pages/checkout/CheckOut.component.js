@@ -27,10 +27,8 @@ const CheckOut = ({ cartItems, total }) => {
                 <span>Remove</span>
             </div>
         </HeaderCheckOut>
-        {
-            cartItems.map(cartItem =>
-            (
-                <ItemCheckOut key={cartItem.id} cartItem={cartItem} />
+        {cartItems.map(cartItem => (
+            <ItemCheckOut key={cartItem.id} cartItem={cartItem} />
             ))}
         <div className="total">Total: ${total}</div>
         <div className="test-warning">
@@ -38,7 +36,7 @@ const CheckOut = ({ cartItems, total }) => {
             <br />
             4242 4242 4242 4242 - Exp: Any future date - CVV: Any 3 Digits
         </div>
-        <StyledStripeCheckoutButton><StripeCheckoutButton className='button' price={total}/>
+        <StyledStripeCheckoutButton><StripeCheckoutButton price={total}/>
         </StyledStripeCheckoutButton>
     </StyledCheckOutPage>
     )};
@@ -65,12 +63,9 @@ const StyledCheckOutPage = styled.div `
             color: red;
         }
 
-        .button { 
-            
-        }
 `;
 
-const StyledStripeCheckoutButton = styled.button` 
+const StyledStripeCheckoutButton = styled.div` 
     margin-left: auto;
     border: none;
 `;
@@ -97,9 +92,5 @@ const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems,
     total: selectCartTotal
 });
-
-
-    
-      
 
 export default connect(mapStateToProps)(CheckOut);

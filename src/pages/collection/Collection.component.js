@@ -6,12 +6,11 @@ import ItemsCollection from '../../components/items-collection/ItemsCollection.c
 
 const CollectionPage = ({ collection }) => {
     const { title, items } = collection;
-    console.log(collection);
     return (
         <StyledCollectionPage>
-            <h2 className='title'>{ title }</h2>
+            <h2 className='title'>{title}</h2>
             <div className='items'>
-            {items.map((item) => (
+            {items.map(item => (
           <ItemsCollection key={item.id} item={item} />
         ))}
             </div>

@@ -9,11 +9,9 @@ const Directory = ({ sections }) => (
             <StyledDirectory>
                 {sections.map(({ id, ...otherSectionProps }) => (
                         <MenuItem key={id} {...otherSectionProps} />
-                    ))
-                }
+                    ))}
             </StyledDirectory>
 );
-
 
 const StyledDirectory = styled.div`
 width: 100%;
@@ -25,6 +23,5 @@ justify-content: space - between;
 const mapStateToProps = createStructuredSelector({
     sections: selectDirectorySections
 });
-
 
 export default connect(mapStateToProps)(Directory);

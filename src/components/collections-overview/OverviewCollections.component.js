@@ -15,7 +15,6 @@ const OverviewCollections = ({ collections }) =>
         </StyledOverViewCollections>
     )
 
-
 const StyledOverViewCollections = styled.div `
   display: flex;
   flex-direction: column;
@@ -24,6 +23,5 @@ const StyledOverViewCollections = styled.div `
 const mapStateToProps = createStructuredSelector({
     collections: selectCollectionsForPreview
 });
-
 
 export default connect(mapStateToProps)(OverviewCollections);

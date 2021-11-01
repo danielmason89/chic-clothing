@@ -13,23 +13,23 @@ import { selectCurrentUser } from '../../redux/user/user.selectors';
 const Header = ({ currentUser, hidden }) => {
     return (
         <StyledHeader>
-        <Link className="logo-container" to="/">
+        <LogoContainer to="/">
             <Logo className="logo"/>
-        </Link>
-        <div className="options">
-            <Link className="option" to='/shop'>
+        </LogoContainer>
+        <OptionContainer>
+            <OptionLink to='/shop'>
                 Shop
-            </Link>
-            <Link className="option" to='/shop'>
+            </OptionLink>
+            <OptionLink to='/shop'>
                 Contact
-            </Link>
+            </OptionLink>
             { currentUser ? (
-                <div className='option' onClick={() => auth.signOut()}>Sign Out</div>
+                <OptionLink as='div' onClick={() => auth.signOut()}>Sign Out</OptionLink>
              ) : (
-                <Link className="option" to='/sign-in'>Sign In</Link>
+                <OptionLink to='/sign-in'>Sign In</OptionLink>
              )}
              <IconCart/>
-        </div>
+        </OptionContainer>
         {hidden ? null : <CartDropDown/>}
         </StyledHeader>
     )};
@@ -39,35 +39,31 @@ const mapStateToProps = createStructuredSelector({
     hidden: selectCartHidden
 });
 
-
 const StyledHeader = styled.div `
 height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
-
-    .logo-container {
-      height: 100%;
-      width: 70px;
-      padding: 25px;
-    }
-
-    .options {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-  
-      .option {
-        padding: 10px 15px;
-        cursor: pointer;
-      }
-    }
 `;
 
+const LogoContainer = styled(Link) `
+height: 100%;
+    width: 70px;
+    padding: 25px;
+`;
 
+const OptionContainer = styled.div`
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+`;
 
+const OptionLink = styled(Link)`
+padding: 10px 15px;
+    cursor: pointer;
+`;
 
 export default connect(mapStateToProps)(Header);
