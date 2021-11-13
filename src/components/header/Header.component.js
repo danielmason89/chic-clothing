@@ -5,7 +5,6 @@ import styled from "styled-components";
 import IconCart from "../cart-icon/IconCart.component";
 import CartDropDown from "../dropdown-cart/CartDropDown.component";
 import { Link } from "react-router-dom";
-// import { auth } from "../../firebase/firebase.utils";
 import { createStructuredSelector } from "reselect";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
