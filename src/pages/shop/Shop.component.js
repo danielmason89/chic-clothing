@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-
 import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
 import CollectionPageContainer from "../collection/Collection.container";
 import OverviewCollectionsContainer from "../../components/collections-overview/OverviewCollections.container";
