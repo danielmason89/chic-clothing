@@ -2,8 +2,8 @@
   "name": "chic-clothing-server",
   "version": "1.0.0",
   "engines": {
-    "node": "12.21.0",
-    "npm": "8.1.0"
+    "node": "12.x",
+    "npm": "8.x"
   },
   "scripts": {
     "client": "cd client && npm run start",
