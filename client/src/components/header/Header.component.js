@@ -44,12 +44,24 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+
+  @media screen and (max-width: 800px) {
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
 `;
 
 const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
+
+  @media screen and (max-width: 800px) {
+    width: 40px;
+    padding: 0;
+    display: flex;
+  }
 `;
 
 const OptionContainer = styled.div`
@@ -58,11 +70,18 @@ const OptionContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media screen and (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+  @media screen and (max-width: 800px) {
+    padding: 0.625rem;
+  }
 `;
 
 const mapDispatchToProps = (dispatch) => ({
