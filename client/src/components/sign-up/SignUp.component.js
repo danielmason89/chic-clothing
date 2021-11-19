@@ -70,7 +70,9 @@ const SignUp = ({ signUpStart }) => {
           label="Confirm Password"
           required
         />
-        <CustomButton type="submit">Sign Up</CustomButton>
+        <CustomButton className="button" type="submit">
+          Sign Up
+        </CustomButton>
       </form>
     </StyledSignUp>
   );
@@ -83,6 +85,19 @@ const StyledSignUp = styled.div`
 
   .title {
     margin: 1.6rem 0rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 380px;
+    text-align: center;
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
   }
 `;
 

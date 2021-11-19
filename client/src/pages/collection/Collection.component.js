@@ -27,8 +27,10 @@ const StyledCollectionPage = styled.div`
   flex-direction: column;
 
   .title {
-    font-size: 38px;
+    font-size: 28px;
     margin: 0 auto 30px;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   .items {
@@ -38,6 +40,19 @@ const StyledCollectionPage = styled.div`
 
     & .collection-item {
       margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      place-self: center stretch;
+
+      & .collection-item {
+        margin-bottom: 10px;
+      }
     }
   }
 `;

@@ -75,6 +75,21 @@ const StyledSignIn = styled.div`
     flex-direction: row;
     justify-content: space-between;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .title {
+      margin: 1.6rem 0rem;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      margin: 0 0.5rem;
+    }
+  }
 `;
 
 const mapDispatchToProps = (dispatch) => ({

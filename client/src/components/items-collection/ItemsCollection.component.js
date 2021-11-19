@@ -85,8 +85,9 @@ const CollectionFooter = styled.div`
     width: auto;
   }
 
-  @media screen and (max-width: 800px) {
-    font-size: 13px;
+  @media screen and (max-width: 1150px) {
+    font-size: 11px;
+    font-weight: bold;
     padding: 0.225rem;
 
     .name {
@@ -111,7 +112,7 @@ const CustomButton2 = styled(CustomButton)`
     display: block;
     opacity: 0.8;
     min-width: unset;
-    padding: 0 2px;
+    padding: 0 1px;
   }
 `;
 

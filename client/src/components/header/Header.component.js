@@ -49,6 +49,7 @@ const StyledHeader = styled.div`
     height: 60px;
     padding: 10px;
     margin-bottom: 20px;
+    width: 100%;
   }
 `;
 
@@ -80,7 +81,7 @@ const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
   @media screen and (max-width: 800px) {
-    padding: 0.625rem;
+    padding: 0.725rem;
   }
 `;
 

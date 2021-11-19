@@ -5,6 +5,7 @@ $main-color: black;
   top: -14px;
   font-size: 12px;
   color: $main-color;
+  
 }
 
 .group {
@@ -23,6 +24,7 @@ $main-color: black;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
+    
 
     &:focus {
       outline: none;
@@ -50,5 +52,19 @@ $main-color: black;
     &.shrink {
       @include shrinkLabel();
     }
+  }
+
+  @media screen and (max-width: 800px) {
+    .form-input{
+      text-align: center;
+      margin: 25px auto;
+      width: auto;
+    }
+
+    .form-input-label {
+      right: 4px;
+    }
+
+    
   }
 }
