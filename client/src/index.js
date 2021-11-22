@@ -9,7 +9,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 // Service Worker
-import * as serviceWorker from "./service-worker";
+import * as serviceWorker from "./serviceWorkerRegistration";
 
 ReactDOM.render(
   <Provider store={store}>
