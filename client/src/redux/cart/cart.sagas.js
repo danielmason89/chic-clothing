@@ -2,6 +2,7 @@ import { all, call, takeLatest, put, select } from "redux-saga/effects";
 import UserActionTypes from "../user/user.types";
 import { clearCart, setCartFromFirebase } from "./cart.actions";
 import CartActionTypes from "./cart.types";
+import { selectCurrentUser } from "../user/user.selectors";
 import { selectCartItems } from "./cart.selectors";
 import { getUserCartRef } from "../../firebase/firebase.utils";
 
