@@ -7,10 +7,10 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     className={`${size} menu-item`}
     onClick={() => history.push(`${match.url}${linkUrl}`)}
   >
-    <div
+    <BackgroundImageContainer
       className="background-image"
       style={{ backgroundImage: `url(${imageUrl})` }}
-    />
+    ></BackgroundImageContainer>
     <Content className="content">
       <Title>{title.toUpperCase()}</Title>
       <Subtitle>Shop Now</Subtitle>
@@ -20,13 +20,13 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 
 const Menu = styled.div`
   min-width: 30%;
-  height: ${({ size }) => (size ? "380px" : "360px")};
+  height: ${({ size }) => (size ? "380px" : "380px")};
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  margin: 0 9.5px 15px;
+  margin: 0 7.5px 15px;
   overflow: hidden;
   &:hover {
     cursor: pointer;
@@ -48,10 +48,7 @@ const Menu = styled.div`
   }
 
   .background-image {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
+    transition: transform 0.2s; /* Animation */
   }
 
   @media screen and (max-width: 800px) {
@@ -59,9 +56,17 @@ const Menu = styled.div`
   }
 `;
 
+const BackgroundImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+`;
+
 const Content = styled.div`
   height: 90px;
-  padding: 0px 19px;
+  padding: 0px 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,14 +79,14 @@ const Content = styled.div`
 
 const Title = styled.h1`
   font-weight: bold;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
   font-size: 15px;
   color: #4a4a4a;
 `;
 
 const Subtitle = styled.span`
   font-weight: lighter;
-  font-size: 13px;
+  font-size: 16px;
 `;
 
 export default withRouter(MenuItem);

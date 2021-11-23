@@ -77,7 +77,6 @@ const CollectionFooter = styled.div`
   font-size: 18px;
 
   .name {
-    width: 70%;
     margin-bottom: 15px;
   }
 

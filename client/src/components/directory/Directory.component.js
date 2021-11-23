@@ -14,10 +14,11 @@ const Directory = ({ sections }) => (
 );
 
 const StyledDirectory = styled.div`
-  width: 100%;
+  width: 90%;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space - between;
+  justify-content: space-between;
 `;
 
 const mapStateToProps = createStructuredSelector({
