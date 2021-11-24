@@ -30,6 +30,7 @@ const Menu = styled.div`
   overflow: hidden;
   &:hover {
     cursor: pointer;
+
     & .background-image {
       transform: scale(1.1);
       transition: transform 4s cubic-bezier(0.25, 0.45, 0.45, 0.95);
@@ -48,20 +49,17 @@ const Menu = styled.div`
   }
 
   .background-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: ${({ imageUrl }) => `url(${imageUrl})`};
     transition: transform 0.2s; /* Animation */
   }
 
   @media screen and (max-width: 800px) {
     height: 250px;
   }
-`;
-
-const BackgroundImageContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
 
 const Content = styled.div`
